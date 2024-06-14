@@ -96,3 +96,47 @@ https://user-images.githubusercontent.com/74200033/159700295-efb119cb-72c1-4c68-
     detectron2 == 0.5                              cv2 == 4.1.2                                   wandb == 0.12.11
                   
   
+
+# README of Murphy
+
+## Jupyter Notebook
+
+``` markdown
+
+- Run this command from client:
+
+ssh 8888:localhost:8888 <username>@<private ip>
+
+Then access through http://localhost:8080
+
+- Run this command on server
+
+jupyter notebook --no-browser --port 8888
+
+Remember to add token to the url for the first time, token is printed to stdout when starting the server.
+```
+
+Jupyter Notebook 切换虚拟环境
+
+``` markdown
+第一步：创建一个新的虚拟环境，这里我电脑已经有了一个装有torch的环境AAA，为了不污染这个环境，我直接复制AAA环境中的包到环境BBB中：conda create -n BBB --clone AAA
+第二步：在虚拟环境下创建kernel：conda install -n BBB ipykernel
+第三步：激活虚拟环境：source activate BBB
+第四步：将该虚拟环境写进notebook的kernel中：python -m ipykernel install --user --name BBB --display-name "python deep_pytorch"
+这时你在base环境中输入jupyter notebook打开notebook，点击右上角的”new”，这时“notebook:”列表下便会显示两个kerbel名称了。（这里要注意只能在base环境中打开jupyter notebook，因为只有base环境中装了它，虚拟环境中并没有装，而只是装了它的kernel）
+还有一个tip是如果在代码编辑界面想要更改kernel，直接点击菜单栏的“Kernel”，接着点击”change kernel”，选择你想要的kernel即可。
+```
+
+``` bash
+(d2l-zh) ubuntu@VM-8-15-ubuntu:~/userDoc/limu-d2l$ pip install ipykernel
+
+(d2l-zh) ubuntu@VM-8-15-ubuntu:~/userDoc/limu-d2l$ python -m ipykernel install --user --name d2l-zh --display-name "D2L-ZH"
+Installed kernelspec d2l-zh in /home/ubuntu/.local/share/jupyter/kernels/d2l-zh
+```
+
+> [动手学深度学习-环境配置|CosmicDusty](https://cosmicdusty.cc/post/AI/D2L/#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98)
+
+
+## Resullt
+
+尝试了一下，没跑起来，原因可能是HRSID数据集配置的不对！
